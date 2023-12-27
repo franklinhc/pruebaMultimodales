@@ -11,6 +11,7 @@ febrero 2022
 
     let botonDeInterface, miBotonCubo1, miBotonCubo2, miBotonCubo3;
     let imagenTela, imagenCarton, imagenLija, imagenActual;
+    let imagenCabecera, imagenFotter;
     let botonN, botonO, botonP; // imágenes usadas por los botones
 
     let misRadioBotones = [];
@@ -49,6 +50,8 @@ function preload() {
     imagen1=loadImage("data/1.jpg");
     imagen2=loadImage("data/2.jpg");
     imagen3=loadImage("data/3.jpg");
+    imagenCabecera=loadImage("data/cabecera_interfaz_simulacion 700x90.jpg");
+    imagenFotter=loadImage("data/fotter_interfaz_simulacion 700x65.jpg");
 }
 
 function setup() {
@@ -62,7 +65,7 @@ function setup() {
         textureWrap(CLAMP);
     }
 
-    // creacion de botones
+    // creación de botones
     {
         botonDeInterface = new CheckBoton(-width / 2 + 15, -height / 2 + 15, 10, 10, "interface");
         botonDeInterface.presionado = true;
@@ -89,7 +92,7 @@ function setup() {
         cursorAtrapado = false;
     }
 
-    // se crean la etiquetas
+    // se crean la etiquetas y se le dan los colores de fondo a cada una
     {
     etiquetaVertical1 = new etiqueta(400,-80,"VERT1");
     etiquetaVertical1.colorDeFondo = color(255,255,0);
@@ -113,7 +116,7 @@ function setup() {
 
 function draw() {
     background(0);
-    camera(0,-143.394150, 204.788010, // eyeX, eyeY, eyeZ: 0,-143.394150, 204.788010,
+    camera(0,-120, 270, // eyeX, eyeY, eyeZ: 0,-143.394150, 204.788010,
         0, 0, 0, // centerX, centerY, centerZ
         0.0, 1, 0.0);  // upX, upY, upZ
 
@@ -182,9 +185,20 @@ function draw() {
     {
         camera();
         textFont(myFont);
+        fill(255);
+        textSize(16);
+        textStyle(BOLD);
+        //text("Simulación para aprender temas de fricción", -340, -height / 2 + 25);
+        image(imagenCabecera,-350,-350);
+        image(imagenFotter,-350,285);
 
+
+        // interfaz con botones de cubos y tipos de pisos
+        {
+        push();
         fill(64);
         noStroke();
+        translate(0,90,0);
         rect(-width / 2, -height / 2, width, 75);
 
         fill(255);
@@ -217,7 +231,8 @@ function draw() {
             for (let n = 0; n < misRadioBotones.length; n++) misRadioBotones[n].display();
         }
 
-        // rectángulo de cubo activo
+        // rectángulo rojo que muestra en el panel superior cuál cubo está activo
+        {
         stroke(255,0,0);
         strokeWeight(1);
         let altoRect = 10;
@@ -234,12 +249,13 @@ function draw() {
             default:
         }
         if (botonDeInterface.presionado) rect(-width / 2 + 98, -height / 2 + altoRect, 60, 20);
-
-
+        }
+        pop();
+        }
 
     }  // FINAL PLANO 2D
 
-}
+} // final del draw
 
 
 //__________________EVENTOS________________________

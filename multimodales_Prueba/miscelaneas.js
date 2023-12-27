@@ -8,8 +8,9 @@ febrero 2022
 
 function calculeCoodenadasCursor3D(cA) {
     zPlano = 0;
-    // calcula la posición del cursosr 3d con respecto al movimiento del mouse
+    // calcula la posición del cursor 3d con respecto al movimiento del mouse
     //  y cambia de cursor 3D a cursor 2D
+    {
     switch (cA) {
         case 1:
             if (cA === 1) zPlano = -70;
@@ -51,6 +52,7 @@ function calculeCoodenadasCursor3D(cA) {
             }
             break;
         default:
+    }
     }
 
     //if(cursoY3D>0) cursoY3D=0; // para que no baje del piso

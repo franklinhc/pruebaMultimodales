@@ -196,7 +196,7 @@ class cubo {
 
         // fricción
         etiquetaIzquierda2.miX = xA-cuboActivo.lado/2*1.5;
-        etiquetaIzquierda2.miY = yA+cuboActivo.lado/2-10;
+        etiquetaIzquierda2.miY = yA+cuboActivo.lado/2-6;
         etiquetaIzquierda2.miZ = zA;
     }
 
@@ -210,7 +210,7 @@ class cubo {
         let lFF = largoDeFlechasDeFriccionHz;
 
         // empuje
-        etiquetaDerecha1.miX = xA+cuboActivo.lado*0.8;
+        etiquetaDerecha1.miX = xA+cuboActivo.lado*1.1;
         etiquetaDerecha1.miY = yA-7;
         etiquetaDerecha1.miZ = zA;
 
@@ -223,8 +223,8 @@ class cubo {
          */
 
         // fricción
-        etiquetaDerecha2.miX = xA+cuboActivo.lado/2+10;
-        etiquetaDerecha2.miY = yA+cuboActivo.lado/2-7;
+        etiquetaDerecha2.miX = xA+cuboActivo.lado/2+24;
+        etiquetaDerecha2.miY = yA+cuboActivo.lado/2-6;
         etiquetaDerecha2.miZ = zA;
     }
 
