@@ -231,7 +231,8 @@ class cubo {
 
     // definiendo si el cursor está en las zonas calientes de los cubos
     overLadosHorizontales (mX, mY, mZ) {
-        if ((mX > this.x -this.lado/2 - 10  && mX < this.x-this.lado/2)) {
+        if ((mX > this.x -this.lado/2 - 10  && mX < this.x-this.lado/2) &&
+            (mY < 0 && mY > -this.lado) ) {
             hoverIzquierdo= true;
         } else{
             hoverIzquierdo= false;

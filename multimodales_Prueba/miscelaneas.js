@@ -14,25 +14,25 @@ function calculeCoodenadasCursor3D(cA) {
     switch (cA) {
         case 1:
             if (cA === 1) zPlano = -70;
-            cursoX3D = map(mouseX, 0, width, -155, 155);
-            cursoY3D = map(mouseY, 0, 270, -120, 0);
+            cursoX3D = map(mouseX, 100, 600, -150, 150);
+            cursoY3D = map(mouseY, 170, 300, -77, 0);
             if(cursoY3D>0) cursoY3D=0; // para que no baje del piso
 
             // para pasar de mouse 2d para los botones a mouse 3d para los cubos
-            if (mouseY < 75) cursor();
+            if (mouseY < 165) cursor();
             else {
-                noCursor();
+                //noCursor();
                 dibujeCursor3D(numeroDeCuboActivo);
             }
             break;
         case 2:
             if (cA === 2) zPlano = 0;
-            cursoX3D = map(mouseX, 0, width, -135, 135);
-            cursoY3D = map(mouseY, 0, 350, -125, 0);
-            if(cursoY3D>0) cursoY3D=0; // para que no baje del piso
+            cursoX3D = map(mouseX, 0, width, -140, 140);
+            cursoY3D = map(mouseY, 0, 350, -165, 0);
+            if(cursoY3D > 0) cursoY3D = 0; // para que no baje del piso
 
             // para pasar de mouse 2d para los botones a mouse 3d para los cubos
-            if (mouseY < 75) cursor();
+            if (mouseY < 165) cursor();
             else {
                 noCursor();
                 dibujeCursor3D(numeroDeCuboActivo);
@@ -45,7 +45,7 @@ function calculeCoodenadasCursor3D(cA) {
             if(cursoY3D>0) cursoY3D=0; // para que no baje del piso
 
             // para pasar de mouse 2d para los botones a mouse 3d para los cubos
-            if (mouseY < 75) cursor();
+            if (mouseY <165) cursor();
             else {
                 noCursor();
                 dibujeCursor3D(numeroDeCuboActivo);

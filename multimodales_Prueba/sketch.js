@@ -67,16 +67,16 @@ function setup() {
 
     // creación de botones
     {
-        botonDeInterface = new CheckBoton(-width / 2 + 15, -height / 2 + 15, 10, 10, "interface");
+        botonDeInterface = new CheckBoton(-width / 2 + 15, -height / 2 + 105, 10, 10, "interface");
         botonDeInterface.presionado = true;
-        miBotonCubo1 = new CheckBoton(-width / 2 + 100, -height / 2 + 15, 10, 10, "cubo 1");
-        miBotonCubo2 = new CheckBoton(-width / 2 + 100, -height / 2 + 35, 10, 10, "cubo 2");
-        miBotonCubo3 = new CheckBoton(-width / 2 + 100, -height / 2 + 55, 10, 10, "cubo 3");
+        miBotonCubo1 = new CheckBoton(-width / 2 + 100, -height / 2 + 105, 10, 10, "cubo 1");
+        miBotonCubo2 = new CheckBoton(-width / 2 + 100, -height / 2 + 125, 10, 10, "cubo 2");
+        miBotonCubo3 = new CheckBoton(-width / 2 + 100, -height / 2 + 145, 10, 10, "cubo 3");
         miBotonCubo2.presionado = true;
 
-        misRadioBotones[0] = new CheckBoton(-width / 2 + 200, -height / 2 + 15, 10, 10, "papel");
-        misRadioBotones[1] = new CheckBoton(-width / 2 + 200, -height / 2 + 35, 10, 10, "tela");
-        misRadioBotones[2] = new CheckBoton(-width / 2 + 200, -height / 2 + 55, 10, 10, "lija");
+        misRadioBotones[0] = new CheckBoton(-width / 2 + 200, -height / 2 + 105, 10, 10, "papel");
+        misRadioBotones[1] = new CheckBoton(-width / 2 + 200, -height / 2 + 125, 10, 10, "tela");
+        misRadioBotones[2] = new CheckBoton(-width / 2 + 200, -height / 2 + 145, 10, 10, "lija");
         misRadioBotones[0].presionado = false;
         misRadioBotones[1].presionado = true;
         misRadioBotones[2].presionado = false;
@@ -188,22 +188,21 @@ function draw() {
         fill(255);
         textSize(16);
         textStyle(BOLD);
-        //text("Simulación para aprender temas de fricción", -340, -height / 2 + 25);
+        //imagenes superior e inferior de la interface
         image(imagenCabecera,-350,-350);
         image(imagenFotter,-350,285);
 
 
-        // interfaz con botones de cubos y tipos de pisos
+        // INTERFAZ CON LOS BOTONES DE CUAL CUBO Y CUAL PISO
+        // fondo gris y texto
         {
-        push();
         fill(64);
         noStroke();
-        translate(0,90,0);
-        rect(-width / 2, -height / 2, width, 75);
+        rect(-width / 2, -height / 2 +90, width, 75);
 
         fill(255);
         textSize(13);
-        text("use teclas 1, 2 o 3 para cambiar de cubo activo", 45, -height / 2 + 45);
+        text("use teclas 1, 2 o 3 para cambiar de cubo activo", 45, -height / 2 + 135);
         textSize(14);
 
         // textos para debugging
@@ -221,7 +220,9 @@ function draw() {
         text("offsetHz: " + offsetHz.toFixed(2) + "     offsetVr: " + offsetVr.toFixed(2), 100, -height / 2 + 85);
         text("lado:" + cuboActivo.lado, 100, -height / 2 + 105);
          */
+        }
 
+        // despliegue de los botones
         botonDeInterface.display();
         if (botonDeInterface.presionado) {
             miBotonCubo1.display();
@@ -235,23 +236,22 @@ function draw() {
         {
         stroke(255,0,0);
         strokeWeight(1);
-        let altoRect = 10;
+        let altoRect = 1000;
         switch (numeroDeCuboActivo) {
             case 1:
-                altoRect = 10;
+                altoRect = 100;
                 break;
             case 2:
-                altoRect = 30;
+                altoRect = 120;
                 break;
             case 3:
-                altoRect = 50;
+                altoRect = 140;
                 break;
             default:
         }
-        if (botonDeInterface.presionado) rect(-width / 2 + 98, -height / 2 + altoRect, 60, 20);
+        if (botonDeInterface.presionado) rect(-width / 2 + 98, -height / 2 + altoRect, 80, 20);
         }
-        pop();
-        }
+
 
     }  // FINAL PLANO 2D
 
@@ -329,6 +329,7 @@ function mouseReleased() {
             }
         }
     } // en if
+    print(mouseX, mouseY, cursoX3D.toFixed(2), cursoY3D.toFixed(2));
 } // end of mouseReleased()
 
 function keyPressed() {

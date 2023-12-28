@@ -13,6 +13,7 @@ function CheckBoton (mX, mY, mAncho, mAlto, miT) {
 
 
     this.overEvent = function () {
+        let arregloCochino = 90;
         return mouseX - width / 2 > this.miX && mouseX - width / 2 < this.miX + this.miAncho &&
             mouseY - height / 2 > this.miY && mouseY - height / 2 < this.miY + this.miAlto;
     } // end overEvent()
