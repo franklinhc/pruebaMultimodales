@@ -8,9 +8,8 @@ febrero 2022
 
 function calculeCoodenadasCursor3D(cA) {
     zPlano = 0;
-    // calcula la posición del cursor 3d con respecto al movimiento del mouse
+    // calcula la posición del cursosr 3d con respecto al movimiento del mouse
     //  y cambia de cursor 3D a cursor 2D
-    {
     switch (cA) {
         case 1:
             if (cA === 1) zPlano = -70;
@@ -52,7 +51,6 @@ function calculeCoodenadasCursor3D(cA) {
             }
             break;
         default:
-    }
     }
 
     //if(cursoY3D>0) cursoY3D=0; // para que no baje del piso
@@ -173,29 +171,35 @@ function actualiceValores (){
         // CASOS PARA PAPEL --------------------------------
         case 1: // piso de papel
             switch (numeroDeCuboActivo) {
-                case 1: // cubo 1 (papel)
-                    largoDeFlechasVerticales = 12.5;
-                    largoDeFlechasDeEmpujeHz = 6.75;
-                    largoDeFlechasDeFriccionHz = 3;
+                case 1: // cubo 1 (cartón)
+                    largoDeFlechasVerticales = 30;
+                    largoDeFlechasDeEmpujeHz = 10;
+                    largoDeFlechasDeFriccionHz = 8;
 
-                    etiquetaVertical1.dato =  "7.5N";
-                    etiquetaVertical2.dato =  "7.5N";
-                    etiquetaIzquierda1.dato =  "3.75N";
-                    etiquetaDerecha1.dato =  "3.75N";
-                    etiquetaIzquierda2.dato =  "1.96N";
-                    etiquetaDerecha2.dato =  "1.96N";
-                    break;
-                default: // cubo 2 o cubo 3 (papel)
-                    largoDeFlechasVerticales = 18.75;
-                    largoDeFlechasDeEmpujeHz = 9.37;
-                    largoDeFlechasDeFriccionHz = 4.68;
-
-                    etiquetaVertical1.dato =  "12.83N";
+                    etiquetaVertical1.dato =  "14.83N";
                     etiquetaVertical2.dato =  "14.83N";
-                    etiquetaIzquierda1.dato =  "6.89N";
-                    etiquetaDerecha1.dato =  "6.89N";
-                    etiquetaDerecha2.dato =  "3.25N";
-                    etiquetaIzquierda2.dato =  "3.25N";
+
+                    // empuje
+                    etiquetaIzquierda1.dato =  "5.34N";
+                    etiquetaDerecha1.dato =  "5.34N";
+                    //fricción
+                    etiquetaIzquierda2.dato =  "4.45N";
+                    etiquetaDerecha2.dato =  "4.45";
+                    break;
+                default: // cubo 2 o cubo 3 (cartón)
+                    largoDeFlechasVerticales = 50;
+                    largoDeFlechasDeEmpujeHz = 20;
+                    largoDeFlechasDeFriccionHz = 18;
+
+                    etiquetaVertical1.dato =  "29.66N";
+                    etiquetaVertical2.dato =  "29.66N";
+
+                    // empuje
+                    etiquetaIzquierda1.dato =  "10.68N";
+                    etiquetaDerecha1.dato =  "10.68N";
+                    //fricción
+                    etiquetaDerecha2.dato =  "8.9";
+                    etiquetaIzquierda2.dato =  "8.9N";
                     break;
             }
             break;
@@ -204,28 +208,34 @@ function actualiceValores (){
             case 2: // piso de tela
                 switch (numeroDeCuboActivo) {
                     case 1: // cubo 1 (tela)
-                        largoDeFlechasVerticales = 25;
-                        largoDeFlechasDeEmpujeHz = 12.5;
-                        largoDeFlechasDeFriccionHz = 6.25;
+                        largoDeFlechasVerticales = 30;
+                        largoDeFlechasDeEmpujeHz = 18;
+                        largoDeFlechasDeFriccionHz = 16;
 
-                        etiquetaVertical1.dato =  "15.5N";
-                        etiquetaVertical2.dato =  "15.5N";
-                        etiquetaIzquierda1.dato =  "7.5N";
-                        etiquetaDerecha1.dato =  "7.7N";
-                        etiquetaIzquierda2.dato =  "3.96N";
-                        etiquetaDerecha2.dato =  "3.96N";
+                        etiquetaVertical1.dato =  "14.83N";
+                        etiquetaVertical2.dato =  "14.83N";
+
+                        // empuje
+                        etiquetaIzquierda1.dato =  "8.9N";
+                        etiquetaDerecha1.dato =  "8.9N";
+                        //fricción
+                        etiquetaIzquierda2.dato =  "7.41N";
+                        etiquetaDerecha2.dato =  "7.41N";
                         break;
                     default: // cubo 2 o cubo 3 (tela)
-                        largoDeFlechasVerticales = 37.5;
-                        largoDeFlechasDeEmpujeHz = 18.75;
-                        largoDeFlechasDeFriccionHz = 9.375;
+                        largoDeFlechasVerticales = 50;
+                        largoDeFlechasDeEmpujeHz = 36;
+                        largoDeFlechasDeFriccionHz = 30;
 
-                        etiquetaVertical1.dato =  "25.83N";
-                        etiquetaVertical2.dato =  "25.83N";
-                        etiquetaIzquierda1.dato =  "12.89N";
-                        etiquetaDerecha1.dato =  "12.89N";
-                        etiquetaDerecha2.dato =  "6.25N";
-                        etiquetaIzquierda2.dato =  "6.25N";
+                        etiquetaVertical1.dato =  "29.66N";
+                        etiquetaVertical2.dato =  "29.66N";
+
+                        // empuje
+                        etiquetaIzquierda1.dato =  "17.8N";
+                        etiquetaDerecha1.dato =  "17.8N";
+                        //fricción
+                        etiquetaDerecha2.dato =  "14.83N";
+                        etiquetaIzquierda2.dato =  "14.83N";
                         break;
                 }
             break;
@@ -234,28 +244,34 @@ function actualiceValores (){
         default: // piso de lija
             switch (numeroDeCuboActivo) {
                 case 1: // cubo 1 (lija)
-                    largoDeFlechasVerticales = 50;
-                    largoDeFlechasDeEmpujeHz = 25;
-                    largoDeFlechasDeFriccionHz = 12.5;
+                    largoDeFlechasVerticales = 30;
+                    largoDeFlechasDeEmpujeHz = 24;
+                    largoDeFlechasDeFriccionHz = 20;
 
-                    etiquetaVertical1.dato =  "30.5N";
-                    etiquetaVertical2.dato =  "30.5N";
-                    etiquetaIzquierda1.dato =  "15.5N";
-                    etiquetaDerecha1.dato =  "15.7N";
-                    etiquetaIzquierda2.dato =  "8.96N";
-                    etiquetaDerecha2.dato =  "8.96N";
+                    etiquetaVertical1.dato =  "14.83N";
+                    etiquetaVertical2.dato =  "14.83N";
+
+                    // empuje
+                    etiquetaIzquierda1.dato =  "12.45N";
+                    etiquetaDerecha1.dato =  "12.45N";
+                    //fricción
+                    etiquetaIzquierda2.dato =  "10.38N";
+                    etiquetaDerecha2.dato =  "10.38N";
                     break;
                 default: // cubo 2 o cubo 3 (lija)
-                    largoDeFlechasVerticales = 75;
-                    largoDeFlechasDeEmpujeHz = 37.5;
-                    largoDeFlechasDeFriccionHz = 18.75;
+                    largoDeFlechasVerticales = 50;
+                    largoDeFlechasDeEmpujeHz = 50;
+                    largoDeFlechasDeFriccionHz = 20;
 
-                    etiquetaVertical1.dato =  "50.83N";
-                    etiquetaVertical2.dato =  "50.83N";
-                    etiquetaIzquierda1.dato =  "25.89N";
-                    etiquetaDerecha1.dato =  "25.89N";
-                    etiquetaDerecha2.dato =  "13.25N";
-                    etiquetaIzquierda2.dato =  "13.25N";
+                    etiquetaVertical1.dato =  "29.66N";
+                    etiquetaVertical2.dato =  "29.66N";
+
+                    // empuje
+                    etiquetaIzquierda1.dato =  "24.91N";
+                    etiquetaDerecha1.dato =  "24.91N";
+                    //fricción
+                    etiquetaDerecha2.dato =  "20.76N";
+                    etiquetaIzquierda2.dato =  "20.76N";
                     break;
             }
             break;

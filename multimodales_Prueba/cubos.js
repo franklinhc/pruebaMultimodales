@@ -12,16 +12,11 @@ class cubo {
         this.arrastrandomeVr = false;
     }
 
-
     display() {
 
         //para manda a pintar las flechas según el tipo de arrastre -----------------
         if (this.arrastrandomeHzIz && pmouseX < mouseX) {
             this.x = cursoX3D - offsetHz;
-            //etiquetaIzquierda1.miX = cursoX3D-12;
-            //etiquetaIzquierda1.miY = cursoY3D -10;
-            //etiquetaIzquierda.dato = cursoX3D -50; // 29.44N
-            //etiquetaIzquierda1.dato = "29.44N"; //
             this.moverEtiquetaVerticalAvisible();
             this.flechaIzquierda(largoFlechaAhora);
             this.flechaArriba(largoFlechaAhora);
@@ -196,7 +191,7 @@ class cubo {
 
         // fricción
         etiquetaIzquierda2.miX = xA-cuboActivo.lado/2*1.5;
-        etiquetaIzquierda2.miY = yA+cuboActivo.lado/2-6;
+        etiquetaIzquierda2.miY = yA+cuboActivo.lado/2-10;
         etiquetaIzquierda2.miZ = zA;
     }
 
@@ -210,7 +205,7 @@ class cubo {
         let lFF = largoDeFlechasDeFriccionHz;
 
         // empuje
-        etiquetaDerecha1.miX = xA+cuboActivo.lado*1.1;
+        etiquetaDerecha1.miX = xA+cuboActivo.lado+5;
         etiquetaDerecha1.miY = yA-7;
         etiquetaDerecha1.miZ = zA;
 
@@ -223,16 +218,15 @@ class cubo {
          */
 
         // fricción
-        etiquetaDerecha2.miX = xA+cuboActivo.lado/2+24;
-        etiquetaDerecha2.miY = yA+cuboActivo.lado/2-6;
+        etiquetaDerecha2.miX = xA+cuboActivo.lado+5;
+        etiquetaDerecha2.miY = yA+cuboActivo.lado/2-7;
         etiquetaDerecha2.miZ = zA;
     }
 
 
     // definiendo si el cursor está en las zonas calientes de los cubos
     overLadosHorizontales (mX, mY, mZ) {
-        if ((mX > this.x -this.lado/2 - 10  && mX < this.x-this.lado/2) &&
-            (mY < 0 && mY > -this.lado) ) {
+        if ((mX > this.x -this.lado/2 - 10  && mX < this.x-this.lado/2)) {
             hoverIzquierdo= true;
         } else{
             hoverIzquierdo= false;
